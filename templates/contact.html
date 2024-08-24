@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Contact Us</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .navbar {
+      background-color: #000000;
+      padding: 15px;
+    }
+
+    .navbar-brand, .nav-link {
+      color: #ffffff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #66fcf1;
+    }
+
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     
+      padding: 20px;
+    }
+
+    .contact-container {
+      display: flex;
+      background-color: #2e2e2e;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 20px 50px rgba(95, 213, 182, 0.3);
+      width: 100%;
+      max-width: 850px;
+      overflow: hidden;
+    }
+
+    .contact-form, .contact-info {
+      padding: 40px;
+      flex: 1;
+    }
+
+    .contact-form {
+      background-color: #1c1c1c;
+    }
+
+    .contact-info {
+      background-color: #2c2c2c; 
+    }
+
+    .contact-form h1, .contact-info h1 {
+      font-size: 32px;
+     
+      background: linear-gradient(to right, rgb(60, 231, 168), rgb(147, 109, 227));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      color: #bababa;
+    }
+
+    .form-control {
+      background-color: #333232;
+      color: #f4f0f0;
+      border: 1px solid #737594;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #ffa500;
+      background-color: #f2f1f1;
+      box-shadow: 0 0 15px rgba(164, 218, 209, 0.5);
+    }
+
+    .btn-primary {
+      background-color: #478665;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: 1px solid #b0dc52;
+      
+    }
+
+    .btn-primary:hover {
+      background-color: #91e29c;
+      transform: scale(1.05);
+    }
+
+    .alert {
+      display: none;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .alert-success {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .alert-danger {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .contact-info p {
+      margin-bottom: 20px;
+      
+    }
+
+    .contact-info a {
+      color: #ffa500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+    }
+
+    .contact-info a:hover {
+      color: #64de8d;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color:#ffa500;
+        top:5%;
+    }
+    .a{
+      background: linear-gradient(to right, rgb(152, 124, 223), rgb(227, 233, 224));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 18px;
+    }
+    .b{
+      background: linear-gradient(to right, rgb(124, 244, 228), rgb(87, 204, 146));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 25px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">
+     <h5 class="b"> <img src="/static/Mahabub.d.png" alt="Logo" style="max-height: 50px;">  Mahabub</h5>
+     
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/skill">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/project">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="contact-section">
+    <div class="contact-container">
+      <div class="contact-form">
+        <h1 class="gradient-text">Write us</h1>
+        <div id="alertMessage" class="alert"></div>
+        <form method="post" action="/send_email">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Message</label>
+            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h1>Contact information</h1>
+        <p>I am open for any suggestion or just to have a chat.</p>
+        <p><i class="fas fa-map-marker-alt"></i> <span class="a">Address:</span> 89/2 Shaalibug Mirpur-1 Dhaka</p>
+        <p><i class="fas fa-phone-alt"></i><span class="a">Phone:</span> +8801601-337085</p>
+        <p><i class="fas fa-envelope"></i> <span class="a">Email:</span> mahbubulhaq.cu.05@gmail.com</p>
+        <p><i class="fas fa-clock"></i> <span class="a">Hours:</span> <span class="normal-color">24/7</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var successMessage = "{{ get_flashed_messages(category_filter=['success']) | first }}"
+      var errorMessage = "{{ get_flashed_messages(category_filter=['danger']) | first }}"
+
+      if (successMessage) {
+        $('#alertMessage').addClass('alert-success').text(successMessage).show();
+      }
+      if (errorMessage) {
+        $('#alertMessage').addClass('alert-danger').text(errorMessage).show();
+      }
+    });
+  </script>
+</body>
+</html>

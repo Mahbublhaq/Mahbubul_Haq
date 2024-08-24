@@ -1,0 +1,122 @@
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #66fcf1;
+}
+
+.social-icons a {
+    color: #c5c6c7;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #66fcf1;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    color: #c5c6c7;
+}
+
+.section-title span {
+    color: #66fcf1;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    background-color: #1f2833;
+    padding: 20px;
+    border-radius: 10px;
+    color: #c5c6c7;
+}
+
+.info-box p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info-box p strong {
+    color: #66fcf1;
+}
+
+/* Animation for text effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title, .description, .info-box p {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+/* Delay animation for each child element */
+.info-box p:nth-child(1) { animation-delay: 0.1s; }
+.info-box p:nth-child(2) { animation-delay: 0.2s; }
+.info-box p:nth-child(3) { animation-delay: 0.3s; }
+.info-box p:nth-child(4) { animation-delay: 0.4s; }
+.info-box p:nth-child(5) { animation-delay: 0.5s; }
+.info-box p:nth-child(6) { animation-delay: 0.6s; }
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 30px;
+    }
+
+    .profile-img {
+        max-width: 200px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Mahbubul Haq</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main Heading */
+        h1 {
+            margin-top: 5%;
+            font-size: 2.5rem; /* Smaller and more professional */
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 70px;
+            color: #00ffea;
+            font-weight: 600; /* Heavier font weight */
+        }
+
+        /* Updated Menu Bar */
+        .menu-bar {
+            width: 100%;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+            background: rgba(0, 0, 0, 0.7); /* Transparent menu bar */
+        }
+
+        /* Add background on scroll */
+        .menu-bar.scrolled {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .menu-bar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-bar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .menu-bar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s, transform 0.3s;
+            perspective: 1000px;
+        }
+
+        .menu-bar ul li a:hover {
+            color: #00ffea;
+            transform: rotateX(15deg);
+        }
+
+        /* Underline effect */
+        .menu-bar ul li::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #00ffea;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        .menu-bar ul li:hover::after {
+            width: 100%;
+        }
+
+        /* Project Section */
+        .project-section {
+            
+            margin-top: 20px; /* Ensure content is not hidden behind the fixed navbar */
+        }
+
+        .project-category {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .project-category h3 {
+            
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: #b7c7bf;
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+        }
+
+        .project-category h2::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: #215e77;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .project-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            box-shadow: 0px 0px 10px rgba(0, 255, 234, 0.3);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .project-description {
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-description h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .project-description p {
+            font-size: 14px;
+            color: #b3b3b3;
+            line-height: 1.4;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0px 15px 15px rgba(0, 255, 234, 0.3);
+        }
+
+        .project-item:hover .project-description {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .project-category h2 {
+                font-size: 1.5rem;
+            }
+
+            .menu-bar {
+                padding: 10px;
+            }
+
+            .menu-bar ul li a {
+                font-size: 16px;
+            }
+
+            .navbar-toggler {
+                margin-right: 10px;
+            }
+ 
+            .p{
+                text-align: justify;
+            }
+            h5{
+                color: #00ffea;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu-bar navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <h5 style="color: #00ffea;">MAHABUB</h4>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li><a href="/index"> Home</a></li>
+                    <li><a href="/about"> About</a></li>
+                    <li><a href="/skill">Skills</a></li>
+                    <li><a href="/projects"> Project</a></li>
+                    <li><a href="/contact"> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>My Projects</h1>
+
+        <!-- Data Analysis Project Section -->
+        <div class="project-section">
+            <div class="project-category">
+                <h3>Data Analysis Project</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="/static/bi.png">
+                    <img src="/static/bi.png" alt="Data Analysis with Python and Power BI">
+                    <div class="project-description">
+                        <h3>Data Analysis with Python and Power BI</h3>
+                        <p>Analyzing and visualizing data using Python and Power BI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IOT Projects Section -->
+        <div class="project-section">
+            <div class="project-category">
+                <h3>Web Development Projects</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="/static/edairy.jpg">
+                    <img src="/static/edairy.jpg" alt="lawyer e_dairy AI Based">
+                    <div class="project-description">
+                        <h3>lawyer e_dairy AI Based (Python, Node.js, MySQL)</h3>
+                        <p style="text-align: center;">The project aims to develop a Digital Case Diary platform for online legal case management, integrating AI for efficient consultation, appointment scheduling, and tailored assistance.</p>
+                    </div>
+                </div>
+                <div class="project-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="/static/bycycle.png">
+                    <img src="/static/bycycle.png" alt="Bicycle Riding Management System">
+                    <div class="project-description">
+                        <h3>Bicycle Riding Management System (PHP, Java, MySQL)</h3>
+                        <p> Renting Bicycle and managing bookings with PHP, Java, and MySQL.</p>
+                    </div>
+                </div>
+                <div class="project-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="/static/uiux.jpg">
+                    <img src="/static/uiux.jpg" alt="ui/ux design">
+                    <div class="project-description">
+                        <h3>Transforming Design into Dynamic Code with Django and Laravel.</h3>
+                        <p style="text-align: center;">We transform your UI/UX designs into powerful, functional web applications using Django and Laravel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-section">
+            <div class="project-category">
+                <h3>Final Year Project</h3>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="/static/Microservice_Architecture.png">
+                    <img src="/static/Microservice_Architecture.png" alt="Microservice Architecture">
+                    <div class="project-description">
+                        <h3>Microservice Architecture (Spring Boot)</h3>
+                        <p>Demonstrating microservice architecture with Spring Boot.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="modalImage" class="img-fluid rounded" alt="Project Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const menuBar = document.querySelector('.menu-bar');
+            if (window.scrollY > 50) {
+                menuBar.classList.add('scrolled');
+            } else {
+                menuBar.classList.remove('scrolled');
+            }
+        });
+
+        document.getElementById('imageModal').addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var imgSrc = button.getAttribute('data-bs-img');
+            var modalImage = document.getElementById('modalImage');
+            modalImage.src = imgSrc;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mahbubul Haq</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap">
+    <style>
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        .curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b0c10;
+            z-index: 10000;
+            animation: curtainEffect 1.5s forwards;
+        }
+
+        @keyframes curtainEffect {
+            0% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        .navbar {
+            background: #0b0c10;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #66fcf1 !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #c5c6c7 !important;
+            margin-right: 15px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #66fcf1 !important;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row; /* Row layout for larger screens */
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full height */
+            margin-top: 80px; /* Adjust for fixed navbar */
+        }
+
+        .left-content {
+            flex: 1; /* Takes available space */
+            padding: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .right-content {
+            flex: 1; /* Takes available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Add padding */
+        }
+
+        .left-content h1 {
+            font-size: 3em;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .left-content h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #66fcf1;
+            margin-bottom: 20px;
+        }
+
+        .left-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #c5c6c7;
+        }
+
+        .left-content .btn {
+            background: #45a29e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 30px;
+            transition: background 0.3s ease;
+        }
+
+        .left-content .btn:hover {
+            background: #66fcf1;
+        }
+
+        .right-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; 
+            margin-left: 35%;/* Optional styling */
+        }
+
+        .social-icons a {
+            color: #c5c6c7;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #66fcf1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: row; /* Stack vertically */
+                height: auto; /* Allow height to adjust */
+                text-align: left; /* Align text to left */
+                padding: 20px; /* Add padding for mobile */
+            }
+
+            .left-content {
+                order: 1; /* Text on left */
+                margin-bottom: 20px; /* Space between sections */
+            }
+
+            .right-content {
+                order: 2; /* Image on right */
+                width: 50%; /* Limit image width for mobile */
+                
+            }
+
+            .left-content h1 {
+                font-size: 2.5em; /* Responsive size */
+            }
+
+            .left-content h2 {
+                font-size: 2em; /* Responsive size */
+            }
+
+            .left-content p {
+                font-size: 1.1em; /* Responsive size */
+            }
+
+            .left-content .btn {
+                font-size: 1em; /* Responsive size */
+            }
+
+            .right-content img {
+                max-width: 100%; /* Full width for mobile */
+                height: auto;
+                ;
+            }
+
+            .navbar {
+                background-color: #0b0c10; 
+                /* Solid background for mobile */
+            }
+
+            .navbar-nav {
+                flex-direction: column; /* Stack links */
+                width: 100%;
+                text-align: center; /* Center align links */
+            }
+
+            .navbar-nav .nav-link {
+                margin: 5px 0; /* Space between links */
+                padding: 10px; /* Add padding */
+                border-radius: 5px; /* Rounded corners */
+            }
+
+            .navbar-nav .nav-link:hover {
+                background: rgba(102, 252, 241, 0.2); /* Highlight effect */
+            }
+        }
+        .d{
+            color: #f5f7f7;
+            text-align: justify;
+        }
+        #navbarNav{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="curtain"></div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Mahabub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/skill">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="left-content">
+        <h1>Hello,</h1>
+        <h2><span class="d">It's Me</span> Mahbubul Haq</h2>
+        <p class="d">With a B.Sc. in Computer Science & Engineering, I am passionate about IoT devices, web development, graphic design, and product SEO, aiming to improve user experiences.</p>
+        <div class="social-icons">
+            <a href="https://github.com/yourprofile" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/yourprofile" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <a href="/static/Shaikh Mahbubul Huq.pdf" class="btn">Download CV</a>
+    </div>
+    <div class="right-content">
+        <img src="/static/22.png" alt="Main Image">
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('.curtain').fadeOut('slow');
+        }, 1500);
+    });
+</script>
+</body>
+</html>

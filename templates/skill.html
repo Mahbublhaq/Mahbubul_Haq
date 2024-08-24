@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Design with Animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+       
+        
+
+        .menu-bar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-bar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .menu-bar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s, transform 0.3s;
+            perspective: 1000px;
+        }
+
+        .menu-bar ul li a:hover {
+            color: #00ffea;
+            transform: rotateX(15deg);
+        }
+
+        /* State line under menu items */
+        .menu-bar ul li::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #00ffea;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        .menu-bar ul li:hover::after {
+            width: 100%;
+        }
+
+        /* Left Sidebar with Photo */
+        .sidebar-photo {
+            width: 250px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            transform-style: preserve-3d;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .sidebar-photo img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid #00ffea;
+            border-radius: 50%;
+            margin-top: 20px;
+            box-shadow: 0px 0px 15px 5px rgba(0, 255, 234, 0.7);
+            transform: rotateY(15deg);
+            animation: spin 10s infinite linear;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .header .name {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 10px 0 5px;
+            transform: rotateX(10deg);
+            animation: headerAnim 3s infinite alternate ease-in-out;
+        }
+
+        .header .title {
+            font-size: 16px;
+            color: #b3b3b3;
+            transform: rotateX(10deg);
+            animation: headerAnim 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes headerAnim {
+            0% {
+                transform: rotateX(0deg);
+            }
+            100% {
+                transform: rotateX(10deg);
+            }
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 150px 20px 50px;
+            margin-left: 250px;
+            margin-right: 20px;
+        }
+
+        .skills h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            transform: rotateX(15deg);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .skill-item {
+            width: 200px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            color: #fff;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0px 5px 10px rgba(0, 255, 234, 0.3);
+            transform-style: preserve-3d;
+        }
+
+        .skill-item:hover {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .skill-item img {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            display: block;
+            filter: grayscale(100%);
+            transition: filter 0.3s, transform 0.3s;
+        }
+
+        .skill-item:hover img {
+            filter: grayscale(0%);
+            transform: rotate(360deg);
+        }
+
+        .circle {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffea;
+            margin: 10px 0;
+            transform: rotateY(15deg);
+        }
+
+        .skill-item h3 {
+            margin: 10px 0 5px;
+            font-size: 20px;
+            z-index: 1;
+            transform: rotateX(15deg);
+        }
+
+        .skill-item p {
+            font-size: 14px;
+            color: #b3b3b3;
+            margin: 0 10px;
+            z-index: 1;
+            transform: rotateX(15deg);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-photo {
+                width: 100%;
+                height: auto;
+                position: static;
+                box-shadow: none;
+                margin-bottom: 30px;
+            }
+
+            .skills {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .menu-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-bar ul {
+                flex-direction: column;
+            }
+
+            .menu-bar ul li {
+                margin: 10px 0;
+            }
+        }
+        .logo{
+            color: #fff;
+            background-color: #000;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 10px 0 5px;
+            transform: rotateX(10deg);
+            animation: headerAnim 3s infinite alternate ease-in-out;
+        }
+        h2{
+            
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            transform: rotateX(15deg);
+            background-image: linear-gradient(to right, rgb(197, 181, 233), rgb(189, 186, 234));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <!-- Logo on the left side -->
+        <div class="logo">
+            <h2 style="color: #00ffea; ">Mahabub</h2>
+        </div>
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/skill">Skills</a></li>
+            <li><a href="/projects">Project</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Left Sidebar with Photo -->
+    <div class="sidebar-photo">
+        <img src="/static/Mahabub.d.png" alt="Mahbubul Haq">
+        <div class="header">
+            <div class="name" style="font-size: 24px;
+            background-image: linear-gradient(to right, rgb(105, 218, 182), rgb(41, 135, 172));
+            -webkit-background-clip: text;
+            color: transparent;">Mahbubul Haq</div>
+            <div class="title">Software Engineering || Full Stack Devloper || IOT Devloper || Data Analysis </div>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 style="font-size: 64px;">MY Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <img src="https://img.icons8.com/color/100/000000/html-5.png" alt="HTML Icon">
+                <div class="circle">80%</div>
+                <h3>HTML</h3>
+                <p>Expert in crafting semantic, accessible web pages.</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://img.icons8.com/color/100/000000/css3.png" alt="CSS Icon">
+                <div class="circle">70%</div>
+                <h3>CSS</h3>
+                <p>Designing responsive, visually appealing layouts.</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://img.icons8.com/color/100/000000/javascript.png" alt="JavaScript Icon">
+                <div class="circle">50%</div>
+                <h3>JavaScript</h3>
+                <p>Building dynamic and interactive web experiences.</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://img.icons8.com/color/100/000000/python.png" alt="Python Icon">
+                <div class="circle">67%</div>
+                <h3>Python</h3>
+                <p>Dajango for Web Devlopment and Data Analysis with Microsoft Power Bi</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://img.icons8.com/color/100/000000/mysql.png" alt="MySQL Icon">
+                <div class="circle">70%</div>
+                <h3>MySQL</h3>
+                <p>Managing databases efficiently with MySQL.</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://img.icons8.com/color/100/000000/adobe-photoshop.png" alt="Design Icon">
+                <div class="circle">75%</div>
+                <h3>Graphic Design</h3>
+                <p>Creating visually appealing designs with Adobe tools.</p>
+            </div>
+            <div class="skill-item">
+                <img src="/static/seo.png" alt="SEO Icon">
+                <div class="circle">70%</div>
+                <h3>SEO</h3>
+                <p>Optimizing websites for search engines and performance.</p>
+            </div>
+            <div class="skill-item">
+                <img src="/static/powerpoint.jpeg" alt="PowerPoint Icon">
+                <div class="circle">85%</div>
+                <h3>PowerPoint</h3>
+                <p>Crafting compelling presentations using PowerPoint.</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://img.icons8.com/color/100/000000/stopwatch.png" alt="Time Management Icon">
+                <div class="circle">99.99%</div>
+                <h3>Time Management</h3>
+                <p>Efficiently managing time and meeting deadlines.</p>
+            </div>
+            <div class="skill-item">
+                <img src="/static/learning.png" alt="Learning Icon">
+                <div class="circle">99.99%</div>
+                <h3>Continuous Learning</h3>
+                <p>Committed to continuous personal and professional growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS (for animations) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
