@@ -1,0 +1,6 @@
+pip install Flask
+pip install  smtplib
+pip install email.mime.text
+
+install all library [ackage ] than run this project
+
