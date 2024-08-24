@@ -1,5 +1,8 @@
-Flask
-pip
+Flask== 3.0.3
+pip==24.2
+secure-smtplib==0.1.1
+email-to==0.1.0
+
 
 
 
