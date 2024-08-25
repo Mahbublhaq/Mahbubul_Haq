@@ -133,22 +133,26 @@
             color: #66fcf1;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 670px) {
             .container {
-                flex-direction: row; /* Stack vertically */
+                flex-direction: row; /* Arrange elements in a row */
+                align-items: center; /* Align items vertically centered */
+                justify-content: space-between; /* Space out content horizontally */
                 height: auto; /* Allow height to adjust */
-                text-align: left; /* Align text to left */
+                text-align: left; /* Keep text aligned to the left */
                 padding: 20px; /* Add padding for mobile */
             }
         
             .left-content {
                 order: 1; /* Text on left */
-                margin-bottom: 20px; /* Space between sections */
+                margin-bottom: 0; /* Remove bottom margin */
+                width: 50%; /* Take up half the screen width */
             }
         
             .right-content {
                 order: 2; /* Image on right */
-                width: 80%; /* Limit image width for mobile */
+                width: 50%; /* Take up half the screen width */
+                text-align: right; /* Align image to the right */
             }
         
             .left-content h1 {
@@ -159,38 +163,46 @@
                 font-size: 2em; /* Responsive size */
                 display: inline-block; /* Keep words together */
                 white-space: nowrap; /* Prevent line break */
+                animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite; /* Maintain the typing animation */
             }
         
             .left-content h2 span {
                 display: inline-block; /* Ensure 'It's Me' and 'Mahbubul Haq' are on the same line */
                 white-space: normal; /* Allow normal wrapping */
-                animation: typing-word 3s steps(14) 0s 1 normal both, blink-caret 0.75s step-end infinite; /* Adjust timing for mobile */
             }
         
-            @keyframes typing-word {
+            @keyframes typing {
                 from { width: 0; }
-                to { width: 40%; }
+                to { width: 100%; }
+            }
+        
+            @keyframes blink-caret {
+                from, to { border-color: transparent; }
+                50% { border-color: #66fcf1; }
             }
         
             .left-content p {
                 font-size: 1.1em; /* Responsive size */
-                margin-top:10%;
-                width:50%;
+                margin-top: 10px; /* Adjust margin */
+                width: 100%; /* Full width for text */
             }
         
             .left-content .btn {
                 font-size: 1em; /* Responsive size */
+                margin-top: 20px; /* Add margin at the top */
             }
         
             .right-content img {
-                max-width: 200%; /* Full width for mobile */
-                height: 100%;
-                weight: 200%;
-                margin-right: 280%;/* Optional styling */
-              
-
-
-
+                max-width: 100%; /* Full width for mobile */
+                height: auto; /* Maintain aspect ratio */
+                margin: 0; /* Remove any margin */
+                animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
+                margin-top: 20%; /* Add margin at the top */
+            }
+        
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
             }
         
             .navbar {
@@ -213,6 +225,7 @@
                 background: rgba(102, 252, 241, 0.2); /* Highlight effect */
             }
         }
+        
         
         .d{
             color: #f5f7f7;
