@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Contact Me </title>
+  <title>Contact Me</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -13,6 +13,7 @@
       color: #ffffff;
     }
 
+    /* Navbar Styles */
     .navbar {
       background-color: #000000;
       padding: 15px;
@@ -28,11 +29,64 @@
       color: #66fcf1;
     }
 
+    .navbar-toggler {
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 0;
+    }
+
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 30px;
+      height: 22px;
+      position: relative;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after,
+    .navbar-toggler-icon div {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+      top: 0;
+    }
+
+    .navbar-toggler-icon div {
+      top: 9px;
+    }
+
+    .navbar-toggler-icon::after {
+      bottom: 0;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon::before {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon::after {
+      transform: rotate(-45deg);
+      bottom: 10px;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon div {
+      opacity: 0;
+    }
+
     .contact-section {
       display: flex;
       justify-content: center;
       align-items: center;
-     
       padding: 20px;
     }
 
@@ -57,16 +111,14 @@
     }
 
     .contact-info {
-      background-color: #2c2c2c; 
+      background-color: #2c2c2c;
     }
 
     .contact-form h1, .contact-info h1 {
       font-size: 32px;
-     
       background: linear-gradient(to right, rgb(60, 231, 168), rgb(147, 109, 227));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-    
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
     }
 
@@ -100,7 +152,6 @@
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
       border-radius: 1px solid #b0dc52;
-      
     }
 
     .btn-primary:hover {
@@ -128,14 +179,12 @@
 
     .contact-info p {
       margin-bottom: 20px;
-      
     }
 
     .contact-info a {
       color: #ffa500;
       text-decoration: none;
       transition: color 0.3s ease;
-
     }
 
     .contact-info a:hover {
@@ -144,30 +193,79 @@
 
     .contact-info i {
       margin-right: 10px;
-      color:#ffa500;
-        top:5%;
+      color: #ffa500;
     }
-    .a{
-      background: linear-gradient(to right, rgb(152, 124, 223), rgb(227, 233, 224));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 18px;
-    }
-    .b{
-      background: linear-gradient(to right, rgb(124, 244, 228), rgb(87, 204, 146));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 25px;
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
+    .a {
+      background: linear-gradient(to right, rgb(152, 124, 223), rgb(227, 233, 224));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 18px;
+    }
+
+    .b {
+      background: linear-gradient(to right, rgb(124, 244, 228), rgb(87, 204, 146));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 25px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+      .navbar-brand {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .navbar-collapse {
+        text-align: center;
+      }
+
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .contact-form, .contact-info {
+        padding: 20px;
+      }
+
+      .contact-section {
+        padding: 10px;
+      }
+
+      .contact-form h1, .contact-info h1 {
+        font-size: 24px;
+      }
+
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-nav .nav-item {
+        margin: 10px 0;
+      }
+
+      .navbar-nav .nav-item .nav-link {
+        font-size: 18px;
+      }
+
+      .navbar-toggler-icon {
+        background-color: #66fcf1;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">
-     <h5 class="b"> <img src="/static/Mahabub.d.png" alt="Logo" style="max-height: 50px;">  Mahabub</h5>
-     
+      <h5 class="b">
+        <img src="/static/Mahabub.d.png" alt="Logo" style="max-height: 50px;">
+        Mahabub
+      </h5>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -230,8 +328,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function() {
-      var successMessage = "{{ get_flashed_messages(category_filter=['success']) | first }}"
-      var errorMessage = "{{ get_flashed_messages(category_filter=['danger']) | first }}"
+      var successMessage = "{{ get_flashed_messages(category_filter=['success']) | first }}";
+      var errorMessage = "{{ get_flashed_messages(category_filter=['danger']) | first }}";
 
       if (successMessage) {
         $('#alertMessage').addClass('alert-success').text(successMessage).show();

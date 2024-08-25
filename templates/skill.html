@@ -237,54 +237,50 @@
             transform: rotateX(15deg);
         }
 
+        /* Hamburger Menu Icon */
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
         @media (max-width: 768px) {
-            .sidebar-photo {
-                width: 100%;
-                height: auto;
-                position: static;
-                box-shadow: none;
-                margin-bottom: 30px;
-            }
-
-            .skills {
-                margin-left: 0;
-                margin-right: 0;
-            }
-
             .menu-bar {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: rgba(0, 0, 0, 0.9); 
             }
-
-            .menu-bar ul {
-                flex-direction: column;
+        
+            .hamburger-menu {
+                display: block; /* Show the hamburger icon on mobile */
             }
-
-            .menu-bar ul li {
+        
+            #menu-items {
+                display: none; /* Hide the menu items by default */
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 10px 0;
+                margin-left:40%;
+            }
+        
+            #menu-items.show {
+                display: flex; /* Show menu items when .show is added */
+            }
+        
+            #menu-items li {
                 margin: 10px 0;
             }
         }
-        .logo{
-            color: #fff;
-            background-color: #000;
-            font-size: 24px;
-            font-weight: 600;
-            margin: 10px 0 5px;
-            transform: rotateX(10deg);
-            animation: headerAnim 3s infinite alternate ease-in-out;
-        }
-        h2{
-            
-            font-weight: 700;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-            transform: rotateX(15deg);
-            background-image: linear-gradient(to right, rgb(197, 181, 233), rgb(189, 186, 234));
-            -webkit-background-clip: text;
-            color: transparent;
-        }
+        
         
         
     </style>
@@ -295,9 +291,13 @@
     <div class="menu-bar">
         <!-- Logo on the left side -->
         <div class="logo">
-            <h2 style="color: #00ffea; ">Mahabub</h2>
+            <h2 style="color: #00ffea;">Mahabub</h2>
         </div>
-        <ul>
+        <!-- Hamburger Menu Icon -->
+        <button class="hamburger-menu" onclick="toggleMenu()">
+            <i class="bi bi-list"></i>
+        </button>
+        <ul id="menu-items">
             <li><a href="/index">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/skill">Skills</a></li>
@@ -387,6 +387,13 @@
 
     <!-- Bootstrap JS (for animations) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu-items");
+            menu.classList.toggle("show");
+        }
+        
+    </script>
 </body>
 </html>
 
