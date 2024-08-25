@@ -214,49 +214,90 @@
     /* Media Queries for Mobile */
     @media (max-width: 768px) {
       .navbar-brand {
-        text-align: center;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+          text-align: center;
+          width: 100%;
+          display: flex;
+          justify-content: center;
       }
-
+  
       .navbar-collapse {
-        text-align: center;
+          text-align: center;
       }
-
+  
       .contact-container {
-        flex-direction: column;
+          flex-direction: column;
       }
-
+  
       .contact-form, .contact-info {
-        padding: 20px;
+          padding: 20px;
       }
-
+  
       .contact-section {
-        padding: 10px;
+          padding: 10px;
       }
-
+  
       .contact-form h1, .contact-info h1 {
-        font-size: 24px;
+          font-size: 24px;
       }
-
+  
       .navbar-nav {
-        display: flex;
-        flex-direction: column;
+          display: flex;
+          flex-direction: column;
       }
-
+  
       .navbar-nav .nav-item {
-        margin: 10px 0;
+          margin: 10px 0;
       }
-
+  
       .navbar-nav .nav-item .nav-link {
-        font-size: 18px;
+          font-size: 18px;
       }
-
+  
+      /* Custom styles for the 3-line menu bar (hamburger icon) */
+      .navbar-toggler {
+          border: none;
+          outline: none;
+          background: transparent;
+          padding: 0;
+          position: relative;
+      }
+  
       .navbar-toggler-icon {
-        background-color: #66fcf1;
+          display: inline-block;
+          width: 30px;
+          height: 20px;
+          position: relative;
       }
-    }
+  
+      .navbar-toggler-icon::before,
+      .navbar-toggler-icon::after {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 4px;
+          background-color: #00ffea; /* Custom color for the lines */
+          position: absolute;
+          left: 0;
+      }
+  
+      .navbar-toggler-icon::before {
+          top: 0; /* Top line */
+      }
+  
+      .navbar-toggler-icon::after {
+          bottom: 0; /* Bottom line */
+      }
+  
+      /* Middle line */
+      .navbar-toggler-icon div {
+          width: 30px;
+          height: 4px;
+          background-color: #00ffea;
+          position: absolute;
+          top: 8px; /* Positioned in the middle */
+      }
+  }
+  
   </style>
 </head>
 <body>
