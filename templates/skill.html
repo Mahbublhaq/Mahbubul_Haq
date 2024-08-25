@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahbubul_Haq Skill</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body {
@@ -33,9 +31,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-       
-        
-
         .menu-bar ul {
             list-style-type: none;
             margin: 0;
@@ -58,7 +53,6 @@
             align-items: center;
             gap: 8px;
             transition: color 0.3s, transform 0.3s;
-            perspective: 1000px;
         }
 
         .menu-bar ul li a:hover {
@@ -66,7 +60,6 @@
             transform: rotateX(15deg);
         }
 
-        /* State line under menu items */
         .menu-bar ul li::after {
             content: '';
             position: absolute;
@@ -248,41 +241,57 @@
             padding: 10px;
         }
         
+        /* Responsive Design */
         @media (max-width: 768px) {
             .menu-bar {
-                flex-direction: row;
-                justify-content: space-between;
-                background-color: rgba(0, 0, 0, 0.9); 
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+               
             }
-        
-            .hamburger-menu {
-                display: block; /* Show the hamburger icon on mobile */
-            }
-        
-            #menu-items {
-                display: none; /* Hide the menu items by default */
+
+            .menu-bar ul {
                 flex-direction: column;
                 width: 100%;
-                text-align: center;
-                background-color: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                padding: 10px 0;
-                margin-left:40%;
+                display: none; /* Hide menu items initially */
+                
             }
-        
-            #menu-items.show {
-                display: flex; /* Show menu items when .show is added */
+
+            .menu-bar ul.show {
+                display: flex;
             }
-        
-            #menu-items li {
-                margin: 10px 0;
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .sidebar-photo {
+                width: 100%;
+                height: auto;
+                position: relative;
+                box-shadow: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar-photo img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .skills {
+                margin-left: 0;
+                padding: 80px 20px 50px;
+            }
+
+            .skills h2 {
+                font-size: 24px;
+            }
+
+            .skill-item {
+                width: 150px;
             }
         }
-        
-        
-        
     </style>
 </head>
 <body>
@@ -314,7 +323,7 @@
             background-image: linear-gradient(to right, rgb(105, 218, 182), rgb(41, 135, 172));
             -webkit-background-clip: text;
             color: transparent;">Mahbubul Haq</div>
-            <div class="title">Software Engineering || Full Stack Devloper || IOT Devloper || Data Analysis </div>
+            <div class="title">Software Engineering || Full Stack Developer || IOT Developer || Data Analysis </div>
         </div>
     </div>
 
@@ -322,6 +331,7 @@
     <section class="skills" id="skills">
         <h2 style="font-size: 64px;">MY Skills</h2>
         <div class="skills-container">
+            <!-- Skill Items -->
             <div class="skill-item">
                 <img src="https://img.icons8.com/color/100/000000/html-5.png" alt="HTML Icon">
                 <div class="circle">80%</div>
@@ -344,7 +354,7 @@
                 <img src="https://img.icons8.com/color/100/000000/python.png" alt="Python Icon">
                 <div class="circle">67%</div>
                 <h3>Python</h3>
-                <p>Dajango for Web Devlopment and Data Analysis with Microsoft Power Bi</p>
+                <p>Django,Flask for Web Development and Data Analysis with Microsoft Power BI</p>
             </div>
             <div class="skill-item">
                 <img src="https://img.icons8.com/color/100/000000/mysql.png" alt="MySQL Icon">
@@ -385,16 +395,12 @@
         </div>
     </section>
 
-    <!-- Bootstrap JS (for animations) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu-items");
             menu.classList.toggle("show");
         }
-        
     </script>
 </body>
 </html>
-
-
