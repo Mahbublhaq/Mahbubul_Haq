@@ -91,6 +91,7 @@
             font-weight: 600;
             color: #66fcf1;
             margin-bottom: 20px;
+            animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
         }
 
         .left-content p {
@@ -139,61 +140,76 @@
                 text-align: left; /* Align text to left */
                 padding: 20px; /* Add padding for mobile */
             }
-
+        
             .left-content {
                 order: 1; /* Text on left */
                 margin-bottom: 20px; /* Space between sections */
             }
-
+        
             .right-content {
                 order: 2; /* Image on right */
                 width: 80%; /* Limit image width for mobile */
-                
             }
-
+        
             .left-content h1 {
                 font-size: 2.5em; /* Responsive size */
             }
-
+        
             .left-content h2 {
                 font-size: 2em; /* Responsive size */
+                display: inline-block; /* Keep words together */
+                white-space: nowrap; /* Prevent line break */
             }
-
+        
+            .left-content h2 span {
+                display: inline-block; /* Ensure 'It's Me' and 'Mahbubul Haq' are on the same line */
+                white-space: normal; /* Allow normal wrapping */
+                animation: typing-word 3s steps(14) 0s 1 normal both, blink-caret 0.75s step-end infinite; /* Adjust timing for mobile */
+            }
+        
+            @keyframes typing-word {
+                from { width: 0; }
+                to { width: 40%; }
+            }
+        
             .left-content p {
                 font-size: 1.1em; /* Responsive size */
+                margin-top:10%;
             }
-
+        
             .left-content .btn {
                 font-size: 1em; /* Responsive size */
             }
-
+        
             .right-content img {
                 max-width: 100%; /* Full width for mobile */
                 height: auto;
-                ;
-            }
+                border-radius: 10px; /* Optional styling */
+                weight: 100%;
 
+            }
+        
             .navbar {
-                background-color: #0b0c10; 
-                /* Solid background for mobile */
+                background-color: #0b0c10; /* Solid background for mobile */
             }
-
+        
             .navbar-nav {
                 flex-direction: column; /* Stack links */
                 width: 100%;
                 text-align: center; /* Center align links */
             }
-
+        
             .navbar-nav .nav-link {
                 margin: 5px 0; /* Space between links */
                 padding: 10px; /* Add padding */
                 border-radius: 5px; /* Rounded corners */
             }
-
+        
             .navbar-nav .nav-link:hover {
                 background: rgba(102, 252, 241, 0.2); /* Highlight effect */
             }
         }
+        
         .d{
             color: #f5f7f7;
             text-align: justify;
