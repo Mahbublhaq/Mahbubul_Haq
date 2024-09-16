@@ -154,6 +154,99 @@
         .show-iframe {
             top: 0 !important;
         }
+        @media (max-width: 670px) {
+            .container {
+                flex-direction: row; /* Arrange elements in a row */
+                align-items: center; /* Align items vertically centered */
+                justify-content: space-between; /* Space out content horizontally */
+                height: auto; /* Allow height to adjust */
+                text-align: left; /* Keep text aligned to the left */
+                padding: 20px; /* Add padding for mobile */
+            }
+        
+            .left-content {
+                order: 1; /* Text on left */
+                margin-bottom: 0; /* Remove bottom margin */
+                width: 50%; /* Take up half the screen width */
+            }
+        
+            .right-content {
+                order: 2; /* Image on right */
+                width: 50%; /* Take up half the screen width */
+                text-align: right; /* Align image to the right */
+            }
+        
+            .left-content h1 {
+                font-size: 2.5em; /* Responsive size */
+            }
+        
+            .left-content h2 {
+                font-size: 2em; /* Responsive size */
+                display: inline-block; /* Keep words together */
+                white-space: nowrap; /* Prevent line break */
+                animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite; /* Maintain the typing animation */
+            }
+        
+            .left-content h2 span {
+                display: inline-block; /* Ensure 'It's Me' and 'Mahbubul Haq' are on the same line */
+                white-space: normal; /* Allow normal wrapping */
+            }
+        
+            @keyframes typing {
+                from { width: 0; }
+                to { width: 100%; }
+            }
+        
+            @keyframes blink-caret {
+                from, to { border-color: transparent; }
+                50% { border-color: #66fcf1; }
+            }
+        
+            .left-content p {
+                font-size: 1.1em; /* Responsive size */
+                margin-top: 10px; /* Adjust margin */
+                width: 100%; /* Full width for text */
+            }
+        
+            .left-content .btn {
+                font-size: 1em; /* Responsive size */
+                margin-top: 20px; /* Add margin at the top */
+            }
+        
+            .right-content img {
+                max-width: 100%; /* Full width for mobile */
+                height: auto; /* Maintain aspect ratio */
+                margin: 0; /* Remove any margin */
+                animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
+                margin-top: 20%; /* Add margin at the top */
+            }
+        
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        
+            .navbar {
+                background-color: #0b0c10; /* Solid background for mobile */
+            }
+        
+            .navbar-nav {
+                flex-direction: column; /* Stack links */
+                width: 100%;
+                text-align: center; /* Center align links */
+            }
+        
+            .navbar-nav .nav-link {
+                margin: 5px 0; /* Space between links */
+                padding: 10px; /* Add padding */
+                border-radius: 5px; /* Rounded corners */
+            }
+        
+            .navbar-nav .nav-link:hover {
+                background: rgba(102, 252, 241, 0.2); /* Highlight effect */
+            }
+        }
+        
     </style>
 </head>
 <body>
