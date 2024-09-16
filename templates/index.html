@@ -58,7 +58,7 @@
 
         .container {
             display: flex;
-            flex-direction: row; /* Row layout for larger screens */
+            flex-direction: row;
             align-items: center;
             justify-content: center;
             height: 100vh; /* Full height */
@@ -66,17 +66,17 @@
         }
 
         .left-content {
-            flex: 1; /* Takes available space */
+            flex: 1;
             padding: 20px;
-            text-align: left; /* Align text to the left */
+            text-align: left;
         }
 
         .right-content {
-            flex: 1; /* Takes available space */
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px; /* Add padding */
+            padding: 20px;
         }
 
         .left-content h1 {
@@ -118,8 +118,8 @@
         .right-content img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px; 
-            margin-left: 35%;/* Optional styling */
+            border-radius: 10px;
+            margin-left: 35%;
         }
 
         .social-icons a {
@@ -133,109 +133,26 @@
             color: #66fcf1;
         }
 
-        @media (max-width: 670px) {
-            .container {
-                flex-direction: row; /* Arrange elements in a row */
-                align-items: center; /* Align items vertically centered */
-                justify-content: space-between; /* Space out content horizontally */
-                height: auto; /* Allow height to adjust */
-                text-align: left; /* Keep text aligned to the left */
-                padding: 20px; /* Add padding for mobile */
-            }
-        
-            .left-content {
-                order: 1; /* Text on left */
-                margin-bottom: 0; /* Remove bottom margin */
-                width: 50%; /* Take up half the screen width */
-            }
-        
-            .right-content {
-                order: 2; /* Image on right */
-                width: 50%; /* Take up half the screen width */
-                text-align: right; /* Align image to the right */
-            }
-        
-            .left-content h1 {
-                font-size: 2.5em; /* Responsive size */
-            }
-        
-            .left-content h2 {
-                font-size: 2em; /* Responsive size */
-                display: inline-block; /* Keep words together */
-                white-space: nowrap; /* Prevent line break */
-                animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite; /* Maintain the typing animation */
-            }
-        
-            .left-content h2 span {
-                display: inline-block; /* Ensure 'It's Me' and 'Mahbubul Haq' are on the same line */
-                white-space: normal; /* Allow normal wrapping */
-            }
-        
-            @keyframes typing {
-                from { width: 0; }
-                to { width: 100%; }
-            }
-        
-            @keyframes blink-caret {
-                from, to { border-color: transparent; }
-                50% { border-color: #66fcf1; }
-            }
-        
-            .left-content p {
-                font-size: 1.1em; /* Responsive size */
-                margin-top: 10px; /* Adjust margin */
-                width: 100%; /* Full width for text */
-            }
-        
-            .left-content .btn {
-                font-size: 1em; /* Responsive size */
-                margin-top: 20px; /* Add margin at the top */
-            }
-        
-            .right-content img {
-                max-width: 100%; /* Full width for mobile */
-                height: auto; /* Maintain aspect ratio */
-                margin: 0; /* Remove any margin */
-                animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
-                margin-top: 20%; /* Add margin at the top */
-            }
-        
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-        
-            .navbar {
-                background-color: #0b0c10; /* Solid background for mobile */
-            }
-        
-            .navbar-nav {
-                flex-direction: column; /* Stack links */
-                width: 100%;
-                text-align: center; /* Center align links */
-            }
-        
-            .navbar-nav .nav-link {
-                margin: 5px 0; /* Space between links */
-                padding: 10px; /* Add padding */
-                border-radius: 5px; /* Rounded corners */
-            }
-        
-            .navbar-nav .nav-link:hover {
-                background: rgba(102, 252, 241, 0.2); /* Highlight effect */
-            }
+        /* Iframe container for About Page */
+        .iframe-container {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
-        
-        
-        .d{
-            color: #f5f7f7;
-            text-align: justify;
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: fixed;
+            top: 100vh; /* Initially hidden below the screen */
+            z-index: 999;
+            transition: top 0.5s ease;
         }
-        #navbarNav{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .btn{
-            margin-top: 10px;
+
+        /* Show iframe after scrolling */
+        .show-iframe {
+            top: 0 !important;
         }
     </style>
 </head>
@@ -270,35 +187,105 @@
 </nav>
 
 <!-- Main Content -->
-<div class="container">
+<div class="container" id="homeContent">
     <div class="left-content">
         <h1>Hello,</h1>
         <h2><span class="d">It's Me</span> Mahbubul Haq</h2>
-        <p class="d">With a B.Sc. in Computer Science & Engineering, I am passionate about IoT devices, Web Development,Data Analysis, Graphic Design, and Product SEO, aiming to improve user experiences.</p>
+        <p class="d">With a B.Sc. in Computer Science & Engineering, I am passionate about IoT devices, Web Development, Data Analysis, Graphic Design, and Product SEO, aiming to improve user experiences.</p>
         <div class="social-icons">
             <a href="https://github.com/Mahbublhaq" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.facebook.com/mahbubulhaq.mahabub/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.linkedin.com/in/shaikh-mahbubul-huq-421542235/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <a href="/static/Shaikh_Mahbubul_Huq.pdf" class="btn">Download CV</a>
-
-
+        <a href="/static/Shaikh_Mahbubul_Huq_Resume.pdf" class="btn">Download CV</a>
     </div>
     <div class="right-content">
         <img src="/static/22.png" alt="Main Image">
     </div>
 </div>
 
+<!-- Iframe Container for About Page -->
+<div class="iframe-container">
+    <iframe src="/about" id="aboutIframe"></iframe>
+    
+</div>
+<div class="iframe-container">
+    <iframe src="/skill" id="skillIframe"></iframe>
+</div>
+<div class="iframe-container">
+    <iframe src="/projects" id="projectsIframe"></iframe>
+</div>
+<div class="iframe-container">
+    <iframe src="/contact" id="contactIframe"></iframe>
+</div>
+
+
+
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function() {
-        setTimeout(function() {
-            $('.curtain').fadeOut('slow');
-        }, 1500);
+ $(document).ready(function() {
+    setTimeout(function() {
+        $('.curtain').fadeOut('slow');
+    }, 1500);
+});
+
+$(document).ready(function() {
+    // Ensure iframes are loaded before calculating heights
+    var homeHeight = $('#homeContent').height(); 
+    var aboutHeight, skillHeight, projectsHeight;
+
+    $('#aboutIframe').on('load', function() {
+        aboutHeight = $(this).height();
     });
+
+    $('#skillIframe').on('load', function() {
+        skillHeight = $(this).height();
+    });
+
+    $('#projectsIframe').on('load', function() {
+        projectsHeight = $(this).height();
+    });
+
+    // Show iframes based on scrolling past the previous section
+    $(window).on('scroll', function() {
+        var scrollHeight = $(window).scrollTop();
+
+        // About Iframe
+        if (scrollHeight > homeHeight) {
+            $('#aboutIframe').addClass('show-iframe');
+        } else {
+            $('#aboutIframe').removeClass('show-iframe');
+        }
+
+        // Skill Iframe
+        if (scrollHeight > homeHeight + aboutHeight) {
+            $('#skillIframe').addClass('show-iframe');
+        } else {
+            $('#skillIframe').removeClass('show-iframe');
+        }
+
+        // Projects Iframe
+        if (scrollHeight > homeHeight + aboutHeight + skillHeight) {
+            $('#projectsIframe').addClass('show-iframe');
+        } else {
+            $('#projectsIframe').removeClass('show-iframe');
+        }
+
+        // Contact Iframe
+        if (scrollHeight > homeHeight + aboutHeight + skillHeight + projectsHeight) {
+            $('#contactIframe').addClass('show-iframe');
+        } else {
+            $('#contactIframe').removeClass('show-iframe');
+        }
+    });
+});
+
+
+
 </script>
 </body>
 </html>
